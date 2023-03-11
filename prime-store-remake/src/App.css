@@ -21,6 +21,9 @@
     --search-bg: #14162b;
     --overlay-bg: rgba(36, 39, 59, 0.3);
     --scrollbar-bg: rgb(1 2 3 / 40%);
+    --text-color: rgb(255, 255, 255, 0.9);
+    --logo--orange: #f49faa;
+    --logo-pink: #f25aaa;
 }
 
 .lightMode {
@@ -37,6 +40,7 @@
     --hover-menu-bg: rgba(255 255 255 / 35%);
     --scrollbar-bg: rgb(255 253 253 / 57%);
     --content-title-color: --theme-color;
+    --text-color: rgb(0, 0, 0, 0.9);
 }
 
 
