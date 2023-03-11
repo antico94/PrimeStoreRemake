@@ -80,3 +80,9 @@ body.lightMode:before{
     backdrop-filter: saturate(3);
     z-index: -999;
 }
+
+.darkModeToggle{
+    position: fixed;
+    right: 5px;
+    top: 60px;
+}

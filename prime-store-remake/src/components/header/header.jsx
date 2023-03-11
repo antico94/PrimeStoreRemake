@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './header.module.css';
+import DarkMode from "../dark-mode/dark-mode";
 
 const Header = () => {
     const [activeMenu, setActiveMenu] = useState(null);
