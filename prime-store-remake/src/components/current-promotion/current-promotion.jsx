@@ -9,4 +9,4 @@ const CurrentPromotion = ({promoText, promoLink}) => {
     );
 };
 
-export default MyComponent;
+export default CurrentPromotion;
