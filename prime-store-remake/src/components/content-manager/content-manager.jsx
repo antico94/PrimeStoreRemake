@@ -1,10 +1,10 @@
 import React from 'react';
+import styles from './content-manager.module.css'
 
-const ContentManager = ({data}) => {
-    if (data.type == 'List')
+const ContentManager = () => {
     return (
-        <div>
-
+        <div className={styles.contentManager}>
+            <h1>Hello</h1>
         </div>
     );
 };

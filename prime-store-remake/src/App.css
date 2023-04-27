@@ -61,7 +61,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
     width: 100%;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
