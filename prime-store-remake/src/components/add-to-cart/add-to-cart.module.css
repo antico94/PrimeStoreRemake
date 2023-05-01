@@ -1,0 +1,13 @@
+.addToCardContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--logo-pink);
+    height: 40px;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-family: "Bebas Neue", monospace;
+    letter-spacing: 1px;
+    gap: 5px;
+}

@@ -1,0 +1,30 @@
+.subcategoryCard{
+    background-color: rgba(255,255,255,0.3);
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    font-family: var(--body-font);
+    color: var(--text-color);
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subcategoryImageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subcategoryImage{
+    max-width: 350px;
+    max-height: 350px;
+}
+
+.subcategoryName{
+    display: flex;
+    color: var(--text-color);
+}

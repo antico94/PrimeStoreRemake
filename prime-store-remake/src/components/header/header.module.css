@@ -16,9 +16,11 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 40px;
     cursor: pointer;
+    width: 180px;
+    border-right: 1px solid var(--border-color);
 }
 
 
