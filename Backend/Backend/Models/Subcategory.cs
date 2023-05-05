@@ -1,7 +1,17 @@
-﻿namespace WebApplication1.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class Subcategory
+namespace Backend.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
+    public class Subcategory
+    {
+        [Key]
+        public int SubcategoryId { get; set; }
+        public string Name { get; set; }
+
+        // Navigation property
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public byte[] ImageData { get; set; }
+        public ICollection<Product> Products { get; set; }
+    }
 }

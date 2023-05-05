@@ -1,14 +1,17 @@
-﻿using PrimeStoreBackend.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication1.Models;
+namespace Backend.Models;
 
 public class Product
 {
-    public int Id { get; set; }
+    [Key]
+    public int ProductId { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
+    public int BrandId { get; set; }
     public Brand Brand { get; set; }
     public string Model { get; set; }
+    public int SubcategoryId { get; set; }
     public Subcategory Subcategory { get; set; }
     public byte[] ImageData { get; set; }
     public decimal PriceNow { get; set; }
