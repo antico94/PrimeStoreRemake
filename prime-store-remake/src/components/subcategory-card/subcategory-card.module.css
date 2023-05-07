@@ -1,6 +1,6 @@
 .subcategoryCard{
     background-color: rgba(255,255,255,0.3);
-    width: 500px;
+    width: calc(25vw - 75px);
     height: 500px;
     border-radius: 10px;
     font-family: var(--body-font);
@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 80%;
 }
 
 .subcategoryImage{
@@ -27,4 +28,8 @@
 .subcategoryName{
     display: flex;
     color: var(--text-color);
+}
+
+.linkSubcategory{
+    text-decoration: none;
 }

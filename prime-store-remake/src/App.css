@@ -84,5 +84,5 @@ body.lightMode:before{
 .darkModeToggle{
     position: fixed;
     right: 5px;
-    top: 60px;
+    top: 15px;
 }
