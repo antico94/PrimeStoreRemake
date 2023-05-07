@@ -25,6 +25,11 @@ const CustomRoutes = () => {
                 path={`/product/:id`}
                 element={<ProductContentManager/>}
             />
+
+            <Route
+                path={`/product/search/:keyword`}
+                element={<ProductSearchManager/>}
+            />
         </Routes>
     );
 };
@@ -39,6 +44,11 @@ const ProductContentManager = () => {
     const { id } = useParams();
     const index = Number(id);
     return <ContentManager ContentType="ProductPage" Index={index} />;
+};
+
+const ProductSearchManager = () => {
+    const { keyword } = useParams();
+    return <ContentManager ContentType="ProductSearch" Index={keyword} />;
 };
 
 export default CustomRoutes;

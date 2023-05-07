@@ -27,12 +27,14 @@ const ContentManager = ({ ContentType, Index }) => {
 
 
     if (ContentType === "Category" && dataLoaded){
-
         return <Subcategories data={data}/>
     }
 
     if (ContentType === "Products" && dataLoaded){
+        return <ProductsPage data={data}/>
+    }
 
+    if (ContentType === "ProductSearch" && dataLoaded){
         return <ProductsPage data={data}/>
     }
 
