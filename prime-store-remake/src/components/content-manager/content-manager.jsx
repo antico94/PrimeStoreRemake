@@ -3,6 +3,7 @@ import styles from './content-manager.module.css';
 import Subcategories from "../../pages/subcategories/subcategories";
 import ProductsPage from "../../pages/products/products-page";
 import {getDataFromApi} from "../../utils/fetch-data";
+import ProductPage from "../../pages/product/product-page";
 
 
 const ContentManager = ({ ContentType, Index }) => {
@@ -13,7 +14,7 @@ const ContentManager = ({ ContentType, Index }) => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const data = await getDataFromApi(Index);
+                const data = await getDataFromApi(ContentType, Index);
                 setData(data);
                 setDataLoaded(true);
             } catch (error) {
@@ -33,6 +34,10 @@ const ContentManager = ({ ContentType, Index }) => {
     if (ContentType === "Products" && dataLoaded){
 
         return <ProductsPage data={data}/>
+    }
+
+    if (ContentType === "ProductPage" && dataLoaded){
+        return <ProductPage data={data}/>
     }
 
 
