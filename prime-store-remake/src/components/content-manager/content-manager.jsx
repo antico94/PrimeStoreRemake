@@ -31,15 +31,15 @@ const ContentManager = ({ ContentType, Index }) => {
     }
 
     if (ContentType === "Products" && dataLoaded){
-        return <ProductsPage data={data}/>
+        return <ProductsPage key={ContentType} data={data}/>
     }
 
     if (ContentType === "ProductSearch" && dataLoaded){
-        return <ProductsPage data={data}/>
+        return <ProductsPage key={ContentType} data={data}/>
     }
 
     if (ContentType === "AllProducts" && dataLoaded){
-        return <ProductsPage data={data}/>
+        return <ProductsPage key={ContentType} data={data}/>
     }
 
     if (ContentType === "ProductPage" && dataLoaded){

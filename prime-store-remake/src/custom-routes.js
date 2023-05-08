@@ -22,15 +22,18 @@ const CustomRoutes = () => {
                 />
             ))}
             <Route
+                key={"product-index"}
                 path={`/product/:id`}
                 element={<ProductContentManager/>}
             />
 
             <Route
+                key={"product-search"}
                 path={`/product/search/:keyword`}
                 element={<ProductSearchManager/>}
             />
             <Route
+                key={"all-products"}
                 path={`/products/all`}
                 element={<ContentManager ContentType={"AllProducts"}/>}
             />

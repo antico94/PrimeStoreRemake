@@ -1,7 +1,5 @@
 ﻿import React from 'react';
 import styles from './subcategories.module.css'
-import headset from './../../assets/images/headphones.png'
-import subcategoryCard from "../../components/subcategory-card/subcategory-card";
 import SubcategoryCard from "../../components/subcategory-card/subcategory-card";
 
 
@@ -11,8 +9,8 @@ const Subcategories = ({data}) => {
             {
                 data.map(el=>{
                     return <SubcategoryCard subcategoryId={el.subcategoryId}
-                                            key={el.subcategoryId}
                                             name={el.name}
+                                            key={el.subcategoryId+Math.random()}
                                             imageName={el.imageName}/>
                 })
             }
