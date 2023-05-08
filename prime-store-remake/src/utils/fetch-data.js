@@ -1,61 +1,36 @@
 export async function getDataFromApi(ContentType, index) {
-    if (ContentType === "Category"){
-        try {
-            const response = await fetch(`https://localhost:44398/${index}`);
+    let url;
 
-            if (response.ok) {
-                const data = await response.json();
-                return data;
-            } else {
-                throw new Error(`Error retrieving data from API. Status code: ${response.status}`);
-            }
-        } catch (error) {
-            throw new Error(`Error retrieving data from API: ${error.message}`);
-        }
-    }
-    else if (ContentType === 'Products'){
-        try {
-            const response = await fetch(`https://localhost:44398/api/Subcategory/${index}/products`);
-
-            if (response.ok) {
-                const data = await response.json();
-                return data;
-            } else {
-                throw new Error(`Error retrieving data from API. Status code: ${response.status}`);
-            }
-        } catch (error) {
-            throw new Error(`Error retrieving data from API: ${error.message}`);
-        }
+    switch (ContentType) {
+        case "Category":
+            url = `https://localhost:44398/${index}`;
+            break;
+        case "Products":
+            url = `https://localhost:44398/api/Subcategory/${index}/products`;
+            break;
+        case "AllProducts":
+            url = `https://localhost:44398/api/Product`;
+            break;
+        case "ProductPage":
+            url = `https://localhost:44398/api/Product/${index}`;
+            break;
+        case "ProductSearch":
+            url = `https://localhost:44398/api/Product/Search/${index}`;
+            break;
+        default:
+            throw new Error(`Unknown content type: ${ContentType}`);
     }
 
-    else if (ContentType === 'ProductPage'){
-        try {
-            const response = await fetch(`https://localhost:44398/api/Product/${index}`);
+    try {
+        const response = await fetch(url);
 
-            if (response.ok) {
-                const data = await response.json();
-                return data;
-            } else {
-                throw new Error(`Error retrieving data from API. Status code: ${response.status}`);
-            }
-        } catch (error) {
-            throw new Error(`Error retrieving data from API: ${error.message}`);
+        if (response.ok) {
+            const data = await response.json();
+            return data;
+        } else {
+            throw new Error(`Error retrieving data from API. Status code: ${response.status}`);
         }
+    } catch (error) {
+        throw new Error(`Error retrieving data from API: ${error.message}`);
     }
-
-    else if (ContentType === 'ProductSearch'){
-        try {
-            const response = await fetch(`https://localhost:44398/api/Product/Search/${index}`);
-
-            if (response.ok) {
-                const data = await response.json();
-                return data;
-            } else {
-                throw new Error(`Error retrieving data from API. Status code: ${response.status}`);
-            }
-        } catch (error) {
-            throw new Error(`Error retrieving data from API: ${error.message}`);
-        }
-    }
-
 }

@@ -30,6 +30,10 @@ const CustomRoutes = () => {
                 path={`/product/search/:keyword`}
                 element={<ProductSearchManager/>}
             />
+            <Route
+                path={`/products/all`}
+                element={<ContentManager ContentType={"AllProducts"}/>}
+            />
         </Routes>
     );
 };

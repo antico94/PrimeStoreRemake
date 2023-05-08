@@ -7,11 +7,9 @@ const ProductsPage = ({data}) => {
     if (data.length > 0){
         return (
             <div className={styles.productsList}>
-                {data.map(
-                    el => {
-                        return ProductCard(el)
-                    }
-                )}
+                {data.map((el) => (
+                    <ProductCard key={el.productId} {...el} />
+                ))}
             </div>
         );
     }
@@ -22,8 +20,6 @@ const ProductsPage = ({data}) => {
             </div>
         )
     }
-
-
 };
 
 export default ProductsPage;

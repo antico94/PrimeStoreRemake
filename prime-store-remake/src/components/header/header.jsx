@@ -37,7 +37,7 @@ const Header = () => {
 
             <div className={styles.navigationContainer}>
                 <Link className={`${styles.menuLink} ${activeMenu === 'Products' ? styles.isActive : ''}`}
-                      to="/products">
+                      to="/products/all">
                     Products
                 </Link>
                 <Link className={`${styles.menuLink} ${activeMenu === "Today's Deals" ? styles.isActive : ''}`}

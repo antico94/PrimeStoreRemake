@@ -38,6 +38,10 @@ const ContentManager = ({ ContentType, Index }) => {
         return <ProductsPage data={data}/>
     }
 
+    if (ContentType === "AllProducts" && dataLoaded){
+        return <ProductsPage data={data}/>
+    }
+
     if (ContentType === "ProductPage" && dataLoaded){
         return <ProductPage data={data}/>
     }
