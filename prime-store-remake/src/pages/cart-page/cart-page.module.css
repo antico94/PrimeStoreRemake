@@ -10,9 +10,21 @@
 }
 
 .viewCartRight {
+    padding:10px;
     margin-top: 10px;
     width: 400px;
     background-color: rgb(255, 255, 255, 0.5);
-    height: 600px;
+    height: 300px;
     border-radius: 15px;
+}
+
+.buyNow{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid black;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    cursor: pointer;
 }

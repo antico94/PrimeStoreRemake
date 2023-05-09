@@ -11,9 +11,9 @@ function App() {
     return (
         <Router>
             <CartContextProvider>
-            <div className="App">
-                <Layout/>
-            </div>
+                <div className="App">
+                    <Layout/>
+                </div>
             </CartContextProvider>
         </Router>
     );
