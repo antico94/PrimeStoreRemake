@@ -113,6 +113,25 @@ namespace Backend.Controllers
 
             return products;
         }
+        
+        
+        // GET: api/Product/OnPromo
+        [HttpGet("OnPromo")]
+        public async Task<ActionResult<List<Product>>> GetProductsOnPromo()
+        {
+            var products = await _context.Products
+                .Where(p => p.OnPromo == true)
+                .ToListAsync();
+
+            if (products == null || products.Count == 0)
+            {
+                return new List<Product>();
+            }
+
+            return products;
+        }
+
+
 
     }
 }
