@@ -88,7 +88,31 @@ namespace Backend.Controllers
 
             return products;
         }
-
         
+        // POST: api/Product/GetProductsByIds
+        [HttpPost("GetProductsByIds")]
+        public async Task<ActionResult<List<ProductDTO>>> GetProductsByIds(List<int> productIds)
+        {
+            var products = await _context.Products
+                .Include(p => p.Subcategory)
+                .Where(p => productIds.Contains(p.ProductId))
+                .Select(p => new ProductDTO
+                {
+                    ProductId = p.ProductId,
+                    Title = p.Title,
+                    SubcategoryId = p.SubcategoryId,
+                    Price = p.PriceNow,
+                    ImageUrl = p.ImageUrl
+                })
+                .ToListAsync();
+
+            if (products == null || products.Count == 0)
+            {
+                return new List<ProductDTO>();
+            }
+
+            return products;
+        }
+
     }
 }
