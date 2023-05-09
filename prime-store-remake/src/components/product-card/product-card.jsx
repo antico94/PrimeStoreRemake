@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './product-card.module.css';
 import AddToCart from '../add-to-cart/add-to-cart';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {CartContext} from "../../context-provider/cart-context-provider";
 
-const ProductCard = ({ productId, title, price, imageUrl }) => {
+const ProductCard = ({productId, title, price, imageUrl}) => {
     const priceInCents = Math.round(Number(price) * 100);
-
     const [mainPrice, secondaryPrice] = priceInCents
         .toString()
         .padStart(3, '0')
@@ -16,7 +16,7 @@ const ProductCard = ({ productId, title, price, imageUrl }) => {
         <div className={styles.productCard}>
             <Link to={`/product/${productId}`} className={styles.linkProduct}>
                 <div className={styles.productImageContainer}>
-                    <img src={imageUrl} alt="product" className={styles.productImage} />
+                    <img src={imageUrl} alt="product" className={styles.productImage}/>
                 </div>
                 <div className={styles.productInfo}>
                     <h1 className={styles.productDescription}>{title}</h1>
@@ -27,7 +27,8 @@ const ProductCard = ({ productId, title, price, imageUrl }) => {
                 </div>
             </Link>
             <div className={styles.cartContainer}>
-                <AddToCart productId={productId} />
+                <AddToCart key={'cart' - productId} productId={productId} title={title} price={price}
+                           imageUrl={imageUrl}/>
             </div>
         </div>
     );

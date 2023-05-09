@@ -1,0 +1,58 @@
+.menuLinkCartContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 60px;
+}
+
+.menuLink {
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: bolder;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    color: var(--text-color);
+}
+
+.menuLinkCart {
+    margin-right: 35px;
+}
+
+.menuLink:hover {
+    background: var(--hover-menu-bg);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+.notify {
+    position: relative;
+}
+
+.notify:before {
+    content: "";
+    position: absolute;
+    background-color: #3a6df0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    right: 10px;
+    top: 15px;
+}
+
+
+.cartIcon {
+    height: 18px;
+    margin-right: 5px;
+}

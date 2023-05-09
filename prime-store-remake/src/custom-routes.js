@@ -37,6 +37,11 @@ const CustomRoutes = () => {
                 path={`/products/all`}
                 element={<ContentManager ContentType={"AllProducts"}/>}
             />
+            <Route
+                key={"view-cart"}
+                path={`/cart`}
+                element={<ContentManager ContentType={"ViewCart"}/>}
+            />
         </Routes>
     );
 };

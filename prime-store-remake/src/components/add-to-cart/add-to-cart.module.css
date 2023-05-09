@@ -1,4 +1,4 @@
-.addToCardContainer{
+.addToCardContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -10,4 +10,22 @@
     font-family: "Bebas Neue", monospace;
     letter-spacing: 1px;
     gap: 5px;
+    border-width: 1px;
+    width: 100%;
 }
+
+/* hover effect */
+.addToCardContainer:hover {
+    background-color: #ff6e9c; /* light pink */
+    cursor: pointer;
+    color: #ffffff; /* white */
+    box-shadow: 0px 0px 10px #ff6e9c;
+}
+
+/* onclick effect */
+.addToCardContainer:active {
+    background-color: #ff4760; /* darker pink */
+    color: #ffffff; /* white */
+    box-shadow: none;
+}
+

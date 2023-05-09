@@ -92,36 +92,48 @@
     padding-left: 0;
 }
 
-.navigationContainer a {
-    padding: 18px 30px;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: 0.1s;
-    border: 1px solid transparent;
+.navigationFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.navigationContainer{
+    display: flex;
 }
 
 .menuLink {
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-size: 18px;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
     -webkit-user-select: none; /* Safari 3.1+ */
     -moz-user-select: none; /* Firefox 2+ */
     -ms-user-select: none; /* IE 10+ */
     user-select: none; /* Standard syntax */
     color: var(--theme-color);
-    border: 1px solid var(--theme-color);
-    position: relative;
-    margin-bottom: 5px;
-    cursor: pointer;
-    transition: 0.2s ease-out;
-    height: 30px;
 }
 
 
-.menuLink.isActive, .menuLink:hover {
+
+.menuLinkCart{
+    margin-right: 35px;
+}
+
+.menuLink:hover{
     background: var(--hover-menu-bg);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.72);
 }
+
 
 .notify {
     position: relative;
@@ -134,8 +146,9 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    right: 20px;
-    top: 16px;
+    right: 10px;
+    top: 15px;
 }
+
 
 
