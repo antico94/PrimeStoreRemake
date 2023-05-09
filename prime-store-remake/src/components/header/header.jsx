@@ -14,10 +14,10 @@ const Header = () => {
 
     return (
         <div className={styles.headerContainer}>
-            <div className={styles.logoHeader}>
+            <Link to={'/'} className={styles.logoHeader}>
                 <h1 className={styles.logoPrimeText}>PRIME</h1>
                 <h1 className={styles.logoStoreText}>STORE</h1>
-            </div>
+            </Link>
             <form onSubmit={handleSearchSubmit}>
 
                 <div className={styles.searchBar}>

@@ -5,6 +5,8 @@ import ProductsPage from "../../pages/products/products-page";
 import {GetDataFromApi} from "../../utils/fetch-data";
 import ProductPage from "../../pages/product/product-page";
 import CartPage from "../../pages/cart-page/cart-page";
+import Deals from "../../pages/deals-page/deals-page";
+import DealsPage from "../../pages/deals-page/deals-page";
 
 
 const ContentManager = ({ContentType, Index}) => {
@@ -53,6 +55,18 @@ const ContentManager = ({ContentType, Index}) => {
 
     if (ContentType === "ViewCart") {
         return <CartPage/>
+    }
+
+    if (ContentType === "ProductDeals" && dataLoaded) {
+        return <DealsPage data={data}/>
+    }
+
+    if (ContentType === "ProductDeals" && dataLoaded) {
+        return <DealsPage data={data}/>
+    }
+
+    if (ContentType === "Home" && dataLoaded) {
+        return <Subcategories data={data}/>
     }
 
 

@@ -19,6 +19,9 @@ export async function GetDataFromApi(ContentType, index) {
         case "ProductSearch":
             url = `https://localhost:44398/api/Product/Search/${index}`;
             break;
+        case "ProductDeals":
+            url = `https://localhost:44398/api/Product/OnPromo`;
+            break;
         default:
             throw new Error(`Unknown content type: ${ContentType}`);
     }
