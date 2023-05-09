@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styles from './cart-page.module.css';
 import { CartContext } from '../../context-provider/cart-context-provider';
 import CartItem from '../../components/cart-item/cart-item';
-import cart from "../../assets/svg/cart.svg";
 
 const ViewCart = () => {
     const { cartItems, clearCart } = useContext(CartContext);
@@ -15,27 +14,33 @@ const ViewCart = () => {
 
     return (
         <div className={styles.viewCart}>
-            <div className={styles.viewCartLeft}>
-                {cartItems.map((item) => (
-                    <CartItem
-                        key={`cart-item-${item.productId}`}
-                        productId={item.productId}
-                        title={item.title}
-                        imageUrl={item.imageUrl}
-                        price={item.price}
-                    />
-                ))}
-            </div>
-            <div className={styles.viewCartRight}>
-                <h2>Order Summary</h2>
-                <p>Products Costs: {totalProductCost} Lei</p>
-                <p>Shipping Fees: {shippingFees} Lei</p>
-                <h1>Total: {totalPrice} Lei</h1>
+            {cartItems.length > 0 ? (
+                <>
+                    <div className={styles.viewCartLeft}>
+                        {cartItems.map((item) => (
+                            <CartItem
+                                key={`cart-item-${item.productId}`}
+                                productId={item.productId}
+                                title={item.title}
+                                imageUrl={item.imageUrl}
+                                price={item.price}
+                            />
+                        ))}
+                    </div>
+                    <div className={styles.viewCartRight}>
+                        <h2>Order Summary</h2>
+                        <p>Products Costs: {totalProductCost} Lei</p>
+                        <p>Shipping Fees: {shippingFees} Lei</p>
+                        <h1>Total: {totalPrice} Lei</h1>
 
-                <button onClick={() => clearCart()} className={styles.buyNow}>
-                    <h3>Send Order</h3>
-                </button>
-            </div>
+                        <button onClick={() => clearCart()} className={styles.buyNow}>
+                            <h3>Send Order</h3>
+                        </button>
+                    </div>
+                </>
+            ) : (
+                <p>There are no products in the cart right now.</p>
+            )}
         </div>
     );
 };

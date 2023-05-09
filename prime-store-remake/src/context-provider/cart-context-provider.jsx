@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import css from "../pages/product/product-page.module.css";
 
 export const CartContext = createContext();
 
@@ -22,6 +23,9 @@ const CartContextProvider = ({ children }) => {
             setCartItems([...cartItems, item]);
         }
     };
+
+
+
 
     const increaseQuantity = (productId) => {
         const existingItemIndex = cartItems.findIndex((item) => item.productId === productId);

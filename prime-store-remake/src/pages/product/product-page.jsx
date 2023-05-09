@@ -1,10 +1,12 @@
-﻿import React, {useEffect, useState} from 'react';
+﻿import React, {useContext, useEffect, useState} from 'react';
 import css from './product-page.module.css';
 import {description} from "../../utils/lorem-ipsum";
 import {removeWhiteBackgroundFromUrl} from "../../utils/remove-white-background";
 import styles from "../../components/product-card/product-card.module.css";
+import {CartContext} from "../../context-provider/cart-context-provider";
 
 const ProductPage = ({data}) => {
+    const {addToCart} = useContext(CartContext)
     const [image, setImage] = useState(null);
     const basePrice = data.price.toString().split(".")[0]
     const decimalPrice = data.price.toString().split(".")[1]
@@ -31,7 +33,7 @@ const ProductPage = ({data}) => {
                     <p className={css.featuresText}>{description}</p>
                 </div>
                 <div className={css.buttons}>
-                    <div className={`${css.button} ${css.buyButton}`}>
+                    <div className={`${css.button} ${css.buyButton}`} onClick={() => addToCart(data.productId, data.title, data.price, data.imageUrl)}>
                         <svg className={css.svg} xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 576 512">
 

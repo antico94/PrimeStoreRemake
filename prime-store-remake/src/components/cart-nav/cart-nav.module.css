@@ -43,9 +43,9 @@
 .notify:before {
     content: "";
     position: absolute;
-    background-color: #3a6df0;
-    width: 6px;
-    height: 6px;
+    background-color: var(--logo-pink);
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     right: 10px;
     top: 15px;
