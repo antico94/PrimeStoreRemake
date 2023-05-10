@@ -76,7 +76,10 @@
 
 
 .buyButton:hover {
-    background-color: var(--logo-pink);
+    background-color: #ff6e9c; /* light pink */
+    cursor: pointer;
+    color: #ffffff; /* white */
+    box-shadow: 0px 0px 10px #ff6e9c;
 }
 
 .svg {

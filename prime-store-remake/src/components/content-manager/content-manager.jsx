@@ -5,8 +5,8 @@ import ProductsPage from "../../pages/products/products-page";
 import {GetDataFromApi} from "../../utils/fetch-data";
 import ProductPage from "../../pages/product/product-page";
 import CartPage from "../../pages/cart-page/cart-page";
-import Deals from "../../pages/deals-page/deals-page";
 import DealsPage from "../../pages/deals-page/deals-page";
+import UnderConstruction from "../../pages/under-construction/under-construction";
 
 
 const ContentManager = ({ContentType, Index}) => {
@@ -15,7 +15,7 @@ const ContentManager = ({ContentType, Index}) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        if (ContentType !== 'ViewCart') {
+        if (ContentType !== 'ViewCart' && ContentType !== 'UnderConstruction' ) {
             async function fetchData() {
                 try {
                     const data = await GetDataFromApi(ContentType, Index);
@@ -30,7 +30,7 @@ const ContentManager = ({ContentType, Index}) => {
         }
 
 
-    }, [Index]);
+    }, [Index, ContentType]);
 
 
     if (ContentType === "Category" && dataLoaded) {
@@ -63,6 +63,10 @@ const ContentManager = ({ContentType, Index}) => {
 
     if (ContentType === "ProductDeals" && dataLoaded) {
         return <DealsPage data={data}/>
+    }
+
+    if (ContentType === "UnderConstruction") {
+        return <UnderConstruction/>
     }
 
     if (ContentType === "Home" && dataLoaded) {

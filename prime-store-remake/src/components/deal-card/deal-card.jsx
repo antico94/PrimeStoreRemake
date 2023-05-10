@@ -1,29 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "../product-card/product-card.module.css";
+import css from './deal-card.module.css'
 import {Link} from "react-router-dom";
 import AddToCart from "../add-to-cart/add-to-cart";
 
+
+
 const DealCard = ({productId, imageUrl, priceNow, priceBefore, title}) => {
-    const priceInCents = Math.round(Number(priceNow) * 100);
-    const [mainPrice, secondaryPrice] = priceInCents
-        .toString()
-        .padStart(3, '0')
-        .match(/^(\d*)(\d{2})$/)
-        ?.slice(1) || ['0', '00'];
-    const priceBeforeInCents = Math.round(Number(priceBefore) * 100);
-    const [mainPriceBefore, secondaryPriceBefore] = priceBeforeInCents
-        .toString()
-        .padStart(3, '0')
-        .match(/^(\d*)(\d{2})$/)
-        ?.slice(1) || ['0', '00'];
-    const priceBeforeContent = priceBefore ? (
-        <div className={styles.priceBefore}>
-            <p className={styles.productPrice}>
-                {mainPriceBefore}
-                <sup className={styles.supPrice}>{secondaryPriceBefore}</sup> Lei
-            </p>
-        </div>
-    ) : null;
+    const [mainPriceNow, setMainPriceNow] = useState('0');
+    const [secondaryPriceNow, setSecondaryPriceNow] = useState('00');
+    const [mainPriceBefore, setMainPriceBefore] = useState('0');
+    const [secondaryPriceBefore, setSecondaryPriceBefore] = useState('00');
+
+    useEffect(() => {
+        if (priceNow !== undefined && priceBefore !== undefined) {
+            const priceInCentsNow = Math.round(Number(priceNow) * 100);
+            const [main, secondary] = priceInCentsNow
+                .toString()
+                .padStart(3, '0')
+                .match(/^(\d*)(\d{2})$/)
+                ?.slice(1) || ['0', '00'];
+            setMainPriceNow(main);
+            setSecondaryPriceNow(secondary);
+
+            const priceInCentsBefore = Math.round(Number(priceBefore) * 100);
+            const [main2, secondary2] = priceInCentsBefore
+                .toString()
+                .padStart(3, '0')
+                .match(/^(\d*)(\d{2})$/)
+                ?.slice(1) || ['0', '00'];
+            setMainPriceBefore(main2);
+            setSecondaryPriceBefore(secondary2);
+        }
+    }, [priceNow, priceBefore]);
 
     return (
         <div className={styles.productCard}>
@@ -32,14 +41,21 @@ const DealCard = ({productId, imageUrl, priceNow, priceBefore, title}) => {
                     <img src={imageUrl} alt="product" className={styles.productImage}/>
                 </div>
                 <div className={styles.productInfo}>
-                    <div className={styles.priceNow}>
+                    <div className={css.priceNow}>
                         <h1 className={styles.productDescription}>{title}</h1>
                         <p className={styles.productPrice}>
-                            {mainPrice}
-                            <sup className={styles.supPrice}>{secondaryPrice}</sup> Lei
+                            {mainPriceNow}
+                            <sup className={styles.supPrice}>{secondaryPriceNow}</sup> Lei
                         </p>
                     </div>
-                    {priceBeforeContent}
+                    <div className={css.priceBefore}>
+                        <p className={styles.productPrice}>
+                            <span className={css.strikethrough}>
+                                {mainPriceBefore}
+                                <sup className={css.supPriceBefore}>{secondaryPriceBefore}</sup> Lei
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </Link>
             <div className={styles.cartContainer}>
@@ -49,5 +65,6 @@ const DealCard = ({productId, imageUrl, priceNow, priceBefore, title}) => {
         </div>
     );
 };
+
 
 export default DealCard;

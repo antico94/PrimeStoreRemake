@@ -1,10 +1,21 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import css from "../pages/product/product-page.module.css";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        const cartItemsFromStorage = JSON.parse(localStorage.getItem('cartItems'));
+        if (cartItemsFromStorage) {
+            setCartItems(cartItemsFromStorage);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems]);
 
     const addToCart = (productId, title, price, imageUrl) => {
         const existingItemIndex = cartItems.findIndex((item) => item.productId === productId);
@@ -23,9 +34,6 @@ const CartContextProvider = ({ children }) => {
             setCartItems([...cartItems, item]);
         }
     };
-
-
-
 
     const increaseQuantity = (productId) => {
         const existingItemIndex = cartItems.findIndex((item) => item.productId === productId);

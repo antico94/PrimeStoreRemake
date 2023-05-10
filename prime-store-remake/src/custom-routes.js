@@ -56,6 +56,24 @@ const CustomRoutes = () => {
             />
 
             <Route
+                key={"new-arrivals"}
+                path={`/new-arrivals`}
+                element={<ContentManager ContentType="ProductDeals"/>}
+            />
+
+            <Route
+                key={"pc-builder"}
+                path={`/pc-builder`}
+                element={<ContentManager ContentType="UnderConstruction"/>}
+            />
+
+            <Route
+                key={"gift-cards"}
+                path={`/gift-cards`}
+                element={<ContentManager ContentType="UnderConstruction"/>}
+            />
+
+            <Route
                 key={"home"}
                 path={`/`}
                 element={<ContentManager ContentType="Category" Index={1}/>}
