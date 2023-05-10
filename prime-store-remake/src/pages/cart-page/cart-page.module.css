@@ -28,3 +28,19 @@
     background-color: rgb(255, 255, 255, 0.5);
     cursor: pointer;
 }
+
+.thankYou {
+    text-align: center;
+    left: 37%;
+    top: 40%;
+    position: relative;
+}
+
+.thankYou h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.thankYou p {
+    font-size: 1.2rem;
+}
