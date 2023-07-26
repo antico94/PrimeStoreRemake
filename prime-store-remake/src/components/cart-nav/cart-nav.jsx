@@ -11,7 +11,7 @@ const CartNav = () => {
             <Link
                 className={`${styles.menuLink} ${styles.menuLinkCart} ${cartItems.length > 0 ? styles.notify : ""}`}
                 to="/cart">
-                <img src={cart} className={styles.cartIcon} alt="cart" />
+                <img src={cart} className={styles.cartIcon} alt="cart"/>
                 Cart
             </Link>
         </div>

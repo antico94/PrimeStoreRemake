@@ -1,5 +1,5 @@
-.subcategoryCard{
-    background-color: rgba(255,255,255,0.3);
+.subcategoryCard {
+    background-color: rgba(255, 255, 255, 0.3);
     width: calc(25vw - 75px);
     height: 500px;
     border-radius: 10px;
@@ -13,23 +13,23 @@
     flex-direction: column;
 }
 
-.subcategoryImageContainer{
+.subcategoryImageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80%;
 }
 
-.subcategoryImage{
+.subcategoryImage {
     max-width: 350px;
     max-height: 350px;
 }
 
-.subcategoryName{
+.subcategoryName {
     display: flex;
     color: var(--text-color);
 }
 
-.linkSubcategory{
+.linkSubcategory {
     text-decoration: none;
 }

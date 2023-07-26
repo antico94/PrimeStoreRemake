@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import AddToCart from "../add-to-cart/add-to-cart";
 
 
-
 const DealCard = ({productId, imageUrl, priceNow, priceBefore, title}) => {
     const [mainPriceNow, setMainPriceNow] = useState('0');
     const [secondaryPriceNow, setSecondaryPriceNow] = useState('00');

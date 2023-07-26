@@ -1,13 +1,13 @@
-.priceBefore{
+.priceBefore {
     display: flex;
     text-decoration: line-through;
     position: absolute;
     right: 0px;
-    left:175px;
+    left: 175px;
     top: 60px;
 }
 
-.supPriceBefore{
+.supPriceBefore {
     font-size: 10px;
     position: relative;
     top: -1px;

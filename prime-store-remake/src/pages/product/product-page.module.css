@@ -42,7 +42,7 @@
     width: 50%;
     position: relative;
     border-right: 1px solid rgb(255, 255, 255, 0.5);;
-    padding:  0 25px
+    padding: 0 25px
 }
 
 .title {
@@ -114,16 +114,16 @@
 }
 
 
-.productPrice{
+.productPrice {
     position: relative;
     font-size: 35px;
-    font-weight:500;
+    font-weight: 500;
     color: red;
     width: 50%;
     text-align: center;
 }
 
-.supPrice{
+.supPrice {
     font-size: 15px;
     top: 0px;
     position: relative;

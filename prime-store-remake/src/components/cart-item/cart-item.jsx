@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import styles from './cart-item.module.css'
 import {CartContext} from "../../context-provider/cart-context-provider";
-import bin from './../../assets/svg/delete.svg'
 import DeleteButton from "../delete-button/delete-button";
 
 const CartItem = ({productId, title, imageUrl, subcategoryId, price}) => {

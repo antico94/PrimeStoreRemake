@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import styles from './header.module.css';
 import CartNav from '../cart-nav/cart-nav';
 
@@ -59,7 +59,7 @@ const Header = () => {
                         Gift Cards
                     </Link>
                 </div>
-                <CartNav />
+                <CartNav/>
             </div>
         </div>
     );

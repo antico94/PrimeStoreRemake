@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './dark-mode.module.css';
 import animationData from './../../assets/lottie/darkMode.json';
 import Lottie from "lottie-react";

@@ -4,16 +4,16 @@ namespace Backend.Models;
 
 public class PrimeStoreDbContext : DbContext
 {
+    public PrimeStoreDbContext(DbContextOptions<PrimeStoreDbContext> options) : base(options)
+    {
+    }
+
     // Add DbSet properties for your entities here
     public DbSet<Brand> Brands { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Subcategory> Subcategories { get; set; }
     public DbSet<Category> Categories { get; set; }
-    
 
-    public PrimeStoreDbContext(DbContextOptions<PrimeStoreDbContext> options) : base(options)
-    {
-    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Product>()

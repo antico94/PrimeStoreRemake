@@ -2,7 +2,6 @@
 import css from './product-page.module.css';
 import {description} from "../../utils/lorem-ipsum";
 import {removeWhiteBackgroundFromUrl} from "../../utils/remove-white-background";
-import styles from "../../components/product-card/product-card.module.css";
 import {CartContext} from "../../context-provider/cart-context-provider";
 
 const ProductPage = ({data}) => {
@@ -24,7 +23,7 @@ const ProductPage = ({data}) => {
     if (!image) {
         return <div>Loading...</div>;
     }
-        return (
+    return (
         <div className={css.productPage}>
             <div className={css.bg}/>
             <div className={css.leftSide}>
@@ -33,7 +32,8 @@ const ProductPage = ({data}) => {
                     <p className={css.featuresText}>{description}</p>
                 </div>
                 <div className={css.buttons}>
-                    <div className={`${css.button} ${css.buyButton}`} onClick={() => addToCart(data.productId, data.title, data.price, data.imageUrl)}>
+                    <div className={`${css.button} ${css.buyButton}`}
+                         onClick={() => addToCart(data.productId, data.title, data.price, data.imageUrl)}>
                         <svg className={css.svg} xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 576 512">
 
@@ -51,7 +51,7 @@ const ProductPage = ({data}) => {
                 <img className={css.productImage} src={image} alt={data.productId}/>
             </div>
         </div>
-        );
+    );
 };
 
 export default ProductPage;

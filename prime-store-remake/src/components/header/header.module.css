@@ -1,4 +1,4 @@
-.headerContainer{
+.headerContainer {
     height: 60px;
     width: 100vw;
     border-bottom: 1px solid var(--border-color);
@@ -85,14 +85,14 @@
     font-weight: 500;
 }
 
-.searchBar:has(input:focus){
+.searchBar:has(input:focus) {
     width: 600px;
     transition: 0.4s;
     box-shadow: 0 0 0 1px var(--border-color);
     padding-left: 0;
 }
 
-.navigationFlex{
+.navigationFlex {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,7 +100,7 @@
     height: 100%;
 }
 
-.navigationContainer{
+.navigationContainer {
     display: flex;
 }
 
@@ -122,12 +122,11 @@
 }
 
 
-
-.menuLinkCart{
+.menuLinkCart {
     margin-right: 35px;
 }
 
-.menuLink:hover{
+.menuLink:hover {
     background: var(--hover-menu-bg);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);

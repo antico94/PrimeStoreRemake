@@ -7,10 +7,10 @@ const Subcategories = ({data}) => {
     return (
         <div className={styles.subcatoriesList}>
             {
-                data.map(el=>{
+                data.map(el => {
                     return <SubcategoryCard subcategoryId={el.subcategoryId}
                                             name={el.name}
-                                            key={el.subcategoryId+Math.random()}
+                                            key={el.subcategoryId + Math.random()}
                                             imageName={el.imageName}/>
                 })
             }

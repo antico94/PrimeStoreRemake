@@ -1,6 +1,3 @@
-import {useContext} from "react";
-import {CartContext} from "../context-provider/cart-context-provider";
-
 export async function GetDataFromApi(ContentType, index) {
     let url;
     switch (ContentType) {

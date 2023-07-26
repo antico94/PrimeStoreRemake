@@ -1,8 +1,7 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import styles from './product-card.module.css';
 import AddToCart from '../add-to-cart/add-to-cart';
 import {Link} from 'react-router-dom';
-import {CartContext} from "../../context-provider/cart-context-provider";
 
 const ProductCard = ({productId, title, price, imageUrl}) => {
     const priceInCents = Math.round(Number(price) * 100);

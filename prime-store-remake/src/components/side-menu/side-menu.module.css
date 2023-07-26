@@ -15,15 +15,15 @@
     height: 100%
 }
 
-.sideMenu svg{
+.sideMenu svg {
     fill: var(--text-color)
 }
 
-.sideMenu svg path{
+.sideMenu svg path {
     fill: var(--text-color);
 }
 
-.sideMenu a{
+.sideMenu a {
     cursor: pointer;
 }
 

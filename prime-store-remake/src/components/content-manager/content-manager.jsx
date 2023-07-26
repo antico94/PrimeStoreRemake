@@ -15,7 +15,7 @@ const ContentManager = ({ContentType, Index}) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        if (ContentType !== 'ViewCart' && ContentType !== 'UnderConstruction' ) {
+        if (ContentType !== 'ViewCart' && ContentType !== 'UnderConstruction') {
             async function fetchData() {
                 try {
                     const data = await GetDataFromApi(ContentType, Index);

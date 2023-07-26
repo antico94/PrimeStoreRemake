@@ -1,9 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
-import css from "../pages/product/product-page.module.css";
+import React, {createContext, useEffect, useState} from 'react';
 
 export const CartContext = createContext();
 
-const CartContextProvider = ({ children }) => {
+const CartContextProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {

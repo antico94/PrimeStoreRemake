@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './cart-page.module.css';
-import { CartContext } from '../../context-provider/cart-context-provider';
+import {CartContext} from '../../context-provider/cart-context-provider';
 import CartItem from '../../components/cart-item/cart-item';
 
 const ViewCart = () => {
-    const { cartItems, clearCart } = useContext(CartContext);
+    const {cartItems, clearCart} = useContext(CartContext);
     const totalProductCost = cartItems.reduce(
         (accumulator, currentItem) => accumulator + currentItem.price * currentItem.quantity,
         0
@@ -20,13 +20,13 @@ const ViewCart = () => {
     };
 
     return (
-            <div className={styles.viewCart}>
-                {orderPlaced ? (
-                    <div className={styles.thankYou}>
-                        <h2>Thank you for your order!</h2>
-                        <p>Your order has been received and will be shipped soon.</p>
-                    </div>
-                ) : (
+        <div className={styles.viewCart}>
+            {orderPlaced ? (
+                <div className={styles.thankYou}>
+                    <h2>Thank you for your order!</h2>
+                    <p>Your order has been received and will be shipped soon.</p>
+                </div>
+            ) : (
                 cartItems.length > 0 ? (
                     <>
                         <div className={styles.viewCartLeft}>

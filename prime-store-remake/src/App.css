@@ -72,7 +72,7 @@ body {
 }
 
 
-body.lightMode:before{
+body.lightMode:before {
     content: "";
     position: absolute;
     left: 0;
@@ -85,7 +85,7 @@ body.lightMode:before{
     z-index: -999;
 }
 
-.darkModeToggle{
+.darkModeToggle {
     position: fixed;
     right: 5px;
     top: 15px;

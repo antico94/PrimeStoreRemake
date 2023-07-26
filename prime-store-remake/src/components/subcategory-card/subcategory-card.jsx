@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './subcategory-card.module.css';
-import { Link, useLocation } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
-const SubcategoryCard = ({ subcategoryId, name, imageName }) => {
+const SubcategoryCard = ({subcategoryId, name, imageName}) => {
     const location = useLocation();
     const [imageSrc, setImageSrc] = useState(null);
 
@@ -16,7 +16,7 @@ const SubcategoryCard = ({ subcategoryId, name, imageName }) => {
         <Link className={styles.linkSubcategory} to={`${location.pathname}/${subcategoryId}`}>
             <div className={styles.subcategoryCard}>
                 <div className={styles.subcategoryImageContainer}>
-                    {imageSrc && <img src={imageSrc} alt="headset" className={styles.subcategoryImage} />}
+                    {imageSrc && <img src={imageSrc} alt="headset" className={styles.subcategoryImage}/>}
                 </div>
                 <h1 className={styles.subcategoryName}>{name}</h1>
             </div>

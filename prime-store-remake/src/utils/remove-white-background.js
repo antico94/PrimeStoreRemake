@@ -8,7 +8,7 @@ export async function removeWhiteBackgroundFromUrl(imageUrl, threshold = 200) {
             img.src = imageUrl;
         });
 
-        const { width, height } = image;
+        const {width, height} = image;
 
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
@@ -17,7 +17,7 @@ export async function removeWhiteBackgroundFromUrl(imageUrl, threshold = 200) {
         ctx.drawImage(image, 0, 0);
 
         const imageData = ctx.getImageData(0, 0, width, height);
-        const { data } = imageData;
+        const {data} = imageData;
 
         // Apply thresholding
         for (let i = 0; i < data.length; i += 4) {
