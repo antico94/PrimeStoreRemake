@@ -64,7 +64,7 @@ const UnderConstruction = () => {
                 <p className={css.text}>
                     Please forgive the inconvenience. <br/>
                     This page is not ready yet! But will be soon.
-                    You can check my progress on github.com/antico94
+                    You can check my progress <a href='https://github.com/antico94'>here</a>
                 </p>
 
             </div>
